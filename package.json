@@ -4,7 +4,8 @@
   "description": "trabajo de procesos",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node servidor"
+    "test": "./node_modules/.bin/jasmine-node servidor",
+    "Start": "node.index.js"
   },
   "repository": {
     "type": "git",
