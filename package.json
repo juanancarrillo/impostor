@@ -1,0 +1,31 @@
+{
+  "name": "impostor",
+  "version": "1.0.0",
+  "description": "trabajo de procesos",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node servidor"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanancarrillo/impostor.git"
+  },
+  "keywords": [
+    "juego"
+  ],
+  "author": "Alberto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juanancarrillo/impostor/issues"
+  },
+  "homepage": "https://github.com/juanancarrillo/impostor#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jasmine-node": "^3.0.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "bufferutil": "^4.0.2",
+    "utf-8-validate": "^5.0.3"
+  }
+}
