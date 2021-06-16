@@ -166,16 +166,10 @@ function ClienteWS(){
 			cli.encargo=data.encargo;
 			if (data.impostor){
 				//$('#avisarImpostor').modal("show");
-				cw.mostrarModalSimple('Has decidido que tu especie será la única que sobrevivirá al ritual, utiliza la tecla a para atacar a tus adversarios.');
+				cw.mostrarModalSimple('Eres el impostor, MATALOS A TODOS');
 			}
 			else{
-				var cadena='La guerra con los humanos ha llegado a un punto critico, pero la Alianza aún';
-				cadena=cadena+'tiene un ás en la manga, a traves de un ritual ancestral podreis trasladar a vuestra gente a un ';
-				cadena=cadena+'planeta idilico, para realizar el ritual debereís reunir los ingredientes necesarios.';
-				cadena=cadena+'Gracias a la magia del lugar podreis realizar vuestra tarea aunque murais, un noble sacrificio por el futuro de vuestra gente.';
-				cadena=cadena+'Aunque eso no ocurrirá, despues de todo estaís entre aliados ¿verdad?.'
-				cadena=cadena+'Para completar tu parte del ritual debes encontrar '+ws.encargo+', con 10 bastará, mejor apresurarse...'
-				
+				var cadena='Recoge 10 unidades de unidades de '+ws.encargo+'';				
 				cw.mostrarModalSimple(cadena);   
 			}
 		});
@@ -194,10 +188,10 @@ function ClienteWS(){
 			console.log(data);
 			if (data.percent ==100){
 				cli.terminado = true;
-				cw.mostrarModalTarea("Ya has encontrado suficientes "+ws.encargo+" para el ritual, esperemos que tus compañeros no tarden...");
+				cw.mostrarModalTarea("Has recogido muchos "+ws.encargo+"");
       		}	
      	 	else{
-      			cw.mostrarModalTarea("Has encontrado "+ws.encargo+" valid@s para el ritual, aun faltan unos poc@s...");
+      			cw.mostrarModalTarea("Has encontrado "+ws.encargo+" ya queda menos...");
     		}
 		});		
 		this.socket.on("hasAtacado",function(fase){

@@ -13,16 +13,28 @@
 	<script src="cliente/src/controlWeb.js"></script>
 	<script src="cliente/src/game.js"></script>
 	<style>
-		.list-group{
-		    max-height: 300px;
-		    margin-bottom: 10px;
-		    overflow-y:scroll;
-		    -webkit-overflow-scrolling: touch;
+		body, html {
+			height: 100%;
+		   
+			margin: 0;
+		}
+		
+		.bg {
+			/* The image used */
+			background-image: url("cliente/assets/images/impostor.jpg");
+		
+			/* Full height */
+			height: 100%;
+			
+			/* Center and scale the image nicely */
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
 		}
 	</style>
 </head>
 <body>
-	<div class="container">
+	<div class="bg">
 		<h3>Impostor</h3>
 		<div class="row">
 	    <div class="col-sm-6">
@@ -40,7 +52,7 @@
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header">
-		        <h5 class="modal-title">Cazadores Cazados</h5>
+		        <h5 class="modal-title">Impostor</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>

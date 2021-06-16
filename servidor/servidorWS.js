@@ -132,7 +132,7 @@ function ServidorWS(){
 		    	cli.enviarATodos(io,codigo,"muereInocente",inocente);
 		    	cli.enviarRemitente(socket,"hasAtacado",fase);
 			    if (fase=="final"){
-			    	cli.enviarATodos(io, codigo, "final","El traidor se ha salido con la suya, de ahora en adelante solo su especie prosperará");
+			    	cli.enviarATodos(io, codigo, "final","El impostor ha ganado");
 			    }
 		    });
 		    socket.on("realizarTarea",function(nick,codigo){

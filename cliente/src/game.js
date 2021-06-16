@@ -48,16 +48,12 @@ function lanzarJuego(){
   var sonidoAtacar;
 //  var tareaCompletada= false;
 
-
-
-
-
   function preload() {
 
     this.load.image("tiles", "cliente/assets/tilesets/completo.png");
-    this.load.tilemapTiledJSON("map", "cliente/assets/tilemaps/mimapa.json");
-    this.load.audio("musica", ["cliente/assets/sounds/music/No Quest.ogg"]);
-    this.load.audio("atacar", ["cliente/assets/sounds/atacar/Retro Weapon Laser 25.wav"]);
+    this.load.tilemapTiledJSON("map", "cliente/assets/tilemaps/newmap.json");
+    this.load.audio("musica", ["cliente/assets/sounds/music/fondo.ogg"]);
+    this.load.audio("atacar", ["cliente/assets/sounds/music/ataque.ogg"]);
 
     // An atlas is a way to pack multiple images together into one texture. I'm using it to load all
     // the player animations (walking left, walking right, etc.) in one image. For more info see:
@@ -68,15 +64,15 @@ function lanzarJuego(){
     //this.load.spritesheet("gabe","cliente/assets/images/gabe.png",{frameWidth:24,frameHeight:24});
     //this.load.spritesheet("gabe","cliente/assets/images/male01-2.png",{frameWidth:32,frameHeight:32});
    // this.load.spritesheet("varios","cliente/assets/images/final2.png",{frameWidth:24,frameHeight:32});
-    this.load.spritesheet("jugadores1","cliente/assets/images/jugadores1.png",{frameWidth:48,frameHeight:56});
-    this.load.spritesheet("jugadores2","cliente/assets/images/jugadores2.png",{frameWidth:48,frameHeight:48});
-	  this.load.spritesheet("jugadores3","cliente/assets/images/jugadores3.png",{frameWidth:48,frameHeight:48});
-	  this.load.spritesheet("jugadores4","cliente/assets/images/jugadores4.png",{frameWidth:48,frameHeight:48});
-  	this.load.spritesheet("jugadores5","cliente/assets/images/jugadores5.png",{frameWidth:48,frameHeight:48});
-	  this.load.spritesheet("jugadores6","cliente/assets/images/jugadores6.png",{frameWidth:48,frameHeight:52});
-	  this.load.spritesheet("portal","cliente/assets/images/portal.png",{frameWidth:48,frameHeight:48});
-    this.load.spritesheet("muertos","cliente/assets/images/muertos56.png",{frameWidth:56,frameHeight:50});
-  }
+   this.load.spritesheet("jugadores1","cliente/assets/images/jugadores1.png",{frameWidth:48,frameHeight:56});
+   this.load.spritesheet("jugadores2","cliente/assets/images/jugadores2.png",{frameWidth:48,frameHeight:48});
+   this.load.spritesheet("jugadores3","cliente/assets/images/jugadores3.png",{frameWidth:48,frameHeight:48});
+   this.load.spritesheet("jugadores4","cliente/assets/images/jugadores4.png",{frameWidth:48,frameHeight:48});
+   this.load.spritesheet("jugadores5","cliente/assets/images/jugadores5.png",{frameWidth:48,frameHeight:48});
+   this.load.spritesheet("jugadores6","cliente/assets/images/jugadores6.png",{frameWidth:48,frameHeight:52});
+   this.load.spritesheet("portal","cliente/assets/images/portal.png",{frameWidth:48,frameHeight:48});
+   this.load.spritesheet("muertos","cliente/assets/images/muertos56.png",{frameWidth:56,frameHeight:50});
+ }
 
   function create() {
     crear=this;
@@ -84,21 +80,20 @@ function lanzarJuego(){
 
     // Parameters are the name you gave the tileset in Tiled and then the key of the tileset image in
     // Phaser's cache (i.e. the name you used in preload)
-    const tileset = map.addTilesetImage("32x32 mega", "tiles");
+    const tileset = map.addTilesetImage("completo", "tiles");
+    
 
     musica = crear.sound.add("musica");
     musica.loop = true;
-    //musica.play();
+    musica.play();
 
     sonidoAtacar = crear.sound.add("atacar");
     // Parameters: layer name (or index) from Tiled, tileset, x, y
     const belowLayer = map.createStaticLayer("Below Player", tileset, 0, 0);
-    const rio = map.createStaticLayer("rio", tileset, 0, 0);
-    const rio2 = map.createStaticLayer("rio2", tileset, 0, 0);
 
     worldLayer = map.createStaticLayer("World", tileset, 0, 0);
     capaTareas = map.createStaticLayer("CapaTareas", tileset, 0, 0);
-    const aboveLayer = map.createStaticLayer("Above Player", tileset, 0, 0);
+    //const aboveLayer = map.createStaticLayer("Above Player", tileset, 0, 0);
 
     worldLayer.setCollisionByExclusion([-1]);
 
@@ -108,7 +103,7 @@ function lanzarJuego(){
     // By default, everything gets depth sorted on the screen in the order we created things. Here, we
     // want the "Above Player" layer to sit on top of the player, so we explicitly give it a depth.
     // Higher depths will sit on top of lower depth objects.
-    aboveLayer.setDepth(10);
+    //aboveLayer.setDepth(10);
 
     // Object layers in Tiled let you embed extra info into a map - like a spawn point or custom
     // collision shapes. In the tmx file, there's an object layer with a point named "Spawn Point"
@@ -606,7 +601,7 @@ function lanzarJuego(){
     function crearColision(){
     if (crear && ws.impostor){
       crear.physics.add.overlap(player,remotos,kill);
-      console.log("aaaaaaaaaaa");
+      
     }
   }  
 
@@ -720,7 +715,8 @@ else{
 
   function finPartida(data){
     final=true;
-    cw.mostrarModalSimple("Se acabó la caza, "+data);
+    musica.stop();
+    cw.mostrarModalSimple("Se acabó la partida, "+data);
   }
 
   function update(time, delta) {
