@@ -1,10 +1,9 @@
 {
   "name": "impostor",
-  "version": "1.0.0",
+  "version": "5.0.0",
   "description": "trabajo de procesos",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node servidor",
     "start": "node.index.js"
   },
   "repository": {
