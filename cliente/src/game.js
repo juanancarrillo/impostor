@@ -70,7 +70,6 @@ function lanzarJuego(){
    this.load.spritesheet("jugadores4","cliente/assets/images/jugadores4.png",{frameWidth:48,frameHeight:48});
    this.load.spritesheet("jugadores5","cliente/assets/images/jugadores5.png",{frameWidth:48,frameHeight:48});
    this.load.spritesheet("jugadores6","cliente/assets/images/jugadores6.png",{frameWidth:48,frameHeight:52});
-   this.load.spritesheet("portal","cliente/assets/images/portal.png",{frameWidth:48,frameHeight:48});
    this.load.spritesheet("muertos","cliente/assets/images/muertos56.png",{frameWidth:56,frameHeight:50});
  }
 
@@ -656,6 +655,7 @@ else{
   function lanzarJugador(nick, numJugador){
    
     var num =ws.numJugador+1;
+    //player = crear.physics.add.sprite(x, y,"varios",recursos[numJugador].frame); 
     player = crear.physics.add.sprite(spawnPoints[num].x, spawnPoints[num].y,"portal",0);   
 
     crear.physics.add.collider(player, worldLayer);
