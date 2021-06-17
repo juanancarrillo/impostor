@@ -172,6 +172,17 @@
  "nextlayerid":5,
  "nextobjectid":11,
  "orientation":"orthogonal",
+ "properties":[
+        {
+         "name":"disponible",
+         "type":"bool",
+         "value":true
+        }, 
+        {
+         "name":"tarea",
+         "type":"string",
+         "value":"tomates"
+        }],
  "renderorder":"right-down",
  "tiledversion":"1.7.0",
  "tileheight":32,
@@ -187,6 +198,63 @@
          "spacing":0,
          "tilecount":4224,
          "tileheight":32,
+         "tiles":[
+                {
+                 "id":2062,
+                 "properties":[
+                        {
+                         "name":"disponible",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"tarea",
+                         "type":"string",
+                         "value":"uva"
+                        }]
+                }, 
+                {
+                 "id":2064,
+                 "properties":[
+                        {
+                         "name":"disponible",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"tarea",
+                         "type":"string",
+                         "value":"limon"
+                        }]
+                }, 
+                {
+                 "id":2202,
+                 "properties":[
+                        {
+                         "name":"disponible",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"tarea",
+                         "type":"string",
+                         "value":"pocion"
+                        }]
+                }, 
+                {
+                 "id":2258,
+                 "properties":[
+                        {
+                         "name":"disponible",
+                         "type":"bool",
+                         "value":true
+                        }, 
+                        {
+                         "name":"tarea",
+                         "type":"string",
+                         "value":"anillo"
+                        }]
+                }],
          "tilewidth":32
         }],
  "tilewidth":32,

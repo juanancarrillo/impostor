@@ -109,7 +109,7 @@ function Partida(num,owner,codigo,juego){
 	this.fase=new Inicial();
 	this.usuarios={};
 	this.elegido="no hay nadie elegido";
-	this.encargos=["huesos","raices","madera","seda","sangre","veneno","gemas","joyas","pocion","llamas"];
+	this.encargos=["anillo","limon","uva","pocion"];
 	this.agregarUsuario=function(nick){
 		return this.fase.agregarUsuario(nick,this)
 	}

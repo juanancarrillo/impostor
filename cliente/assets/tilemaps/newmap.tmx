@@ -1,9 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.5" tiledversion="1.7.0" orientation="orthogonal" renderorder="right-down" width="70" height="50" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="11">
+ <properties>
+  <property name="disponible" type="bool" value="true"/>
+  <property name="tarea" value="tomates"/>
+ </properties>
  <tileset firstgid="1" name="completo" tilewidth="32" tileheight="32" tilecount="4224" columns="88">
   <image source="../tilesets/completo.png" width="2816" height="1536"/>
+  <tile id="2062">
+   <properties>
+    <property name="disponible" type="bool" value="true"/>
+    <property name="tarea" value="uva"/>
+   </properties>
+  </tile>
+  <tile id="2064">
+   <properties>
+    <property name="disponible" type="bool" value="true"/>
+    <property name="tarea" value="limon"/>
+   </properties>
+  </tile>
+  <tile id="2202">
+   <properties>
+    <property name="disponible" type="bool" value="true"/>
+    <property name="tarea" value="pocion"/>
+   </properties>
+  </tile>
+  <tile id="2258">
+   <properties>
+    <property name="disponible" type="bool" value="true"/>
+    <property name="tarea" value="anillo"/>
+   </properties>
+  </tile>
  </tileset>
- <layer id="1" name="Below Player" width="70" height="50" visible="0">
+ <layer id="1" name="Below Player" width="70" height="50">
   <data encoding="csv">
 511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,
 511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,
@@ -57,7 +85,7 @@
 511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511,511
 </data>
  </layer>
- <layer id="2" name="World" width="70" height="50" visible="0">
+ <layer id="2" name="World" width="70" height="50">
   <data encoding="csv">
 1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1559,1560,1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1559,1560,1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1559,1560,1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1559,1560,1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1549,1550,1551,1552,1553,1554,1555,1556,1557,1558,1559,1560,
 1558,0,0,0,0,0,0,681,682,0,0,0,0,0,0,0,0,0,0,0,681,682,0,0,0,0,0,0,0,0,0,0,0,0,0,0,681,682,0,0,0,0,0,0,0,0,0,0,681,682,0,0,0,0,0,0,0,0,681,682,0,0,0,0,0,0,0,0,0,1558,
@@ -113,7 +141,8 @@
  </layer>
  <layer id="3" name="CapaTareas" width="70" height="50">
   <properties>
-   <property name="tarea" value="anillo"/>
+   <property name="disponible" type="bool" value="true"/>
+   <property name="tarea" value="uva"/>
   </properties>
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
